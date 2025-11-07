@@ -1,6 +1,7 @@
 import os
 
 # Solicita as informações ao usuário
+os.system("git init")
 print("========================================================================")
 print("|                                                                      |")
 print("|              𝗔𝗱𝗶𝗰𝗶𝗼𝗻𝗲 𝘂𝗺 𝗻𝗼𝘃𝗼 𝗿𝗲𝗽𝗼́𝘀𝗶𝘁𝗼𝗿𝗶𝗼 𝗻𝗼 𝗚𝗶𝘁𝗛𝘂𝗯😺💾               |")
@@ -33,17 +34,26 @@ print("|                                                                      |"
 print("| Criado por Gustavo Nunes da Silva 🖥️                                 |")
 print("========================================================================")
 
-nome = input("| Digite seu nome : ")
+nome = input("| Digite seu nome😊: ")
 email = input("| Digite seu email 📩: ")
-mensagem = input("| Digite a mensagem do commit 📨: ")
-link = input("| Digite o link do repositório remoto 🔗: ")
-
-# Executa os comandos do git
-os.system("git init")
 os.system(f'git config user.name "{nome}"')
 os.system(f'git config user.email "{email}"')
 os.system("git add .")
+
+
+print("| Deseja ver o git status ? 🤔")
+opção = input("| Digite sua opção -> S (sim) ou N (não):")
+
+if(opção == "S" or opção == "s" or opção ==  "sim" or opção == "Sim"):
+    status = os.system("git status")
+    print(status)
+
+
+
+
+mensagem = input("| Digite a mensagem do commit 📨: ")
 os.system(f'git commit -m "{mensagem}"')
+link = input("| Digite o link do repositório remoto 🔗: ")
 os.system(f'git remote add origin {link}')
 os.system("git branch -M main")
 os.system("git push -u origin main")
